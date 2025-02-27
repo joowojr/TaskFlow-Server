@@ -5,6 +5,7 @@ import clap.server.application.port.inbound.domain.MemberService;
 import clap.server.application.port.outbound.auth.loginLog.LoadLoginLogPort;
 import clap.server.application.port.outbound.log.CommandLogPort;
 import clap.server.application.port.outbound.log.LoggingPort;
+import clap.server.common.utils.ClientIpParseUtil;
 import clap.server.domain.model.auth.LoginLog;
 import clap.server.domain.model.log.AnonymousLog;
 import clap.server.domain.model.log.MemberLog;
@@ -22,21 +23,21 @@ public class LogService implements LoggingPort {
     private final MemberService memberService;
     private final LoadLoginLogPort loadLoginLogPort;
 
-    public void createAnonymousLog(HttpServletRequest request,  int statusCode, String customCode, LogStatus logStatus, Object responseBody, String requestBody, String nickName) {
-        AnonymousLog anonymousLog = AnonymousLog.createAnonymousLog(request, statusCode,customCode, logStatus, responseBody, requestBody, nickName);
+    public void createAnonymousLog(HttpServletRequest request, int statusCode, String customCode, LogStatus logStatus, Object responseBody, String requestBody, String nickName) {
+        AnonymousLog anonymousLog = AnonymousLog.createAnonymousLog(ClientIpParseUtil.getClientIp(request), request.getRequestURI(), request.getMethod(), statusCode, customCode, logStatus, responseBody, requestBody, nickName);
         commandLogPort.saveAnonymousLog(anonymousLog);
     }
 
-    public void createMemberLog(HttpServletRequest request, int statusCode, String customCode,LogStatus logStatus, Object responseBody, String requestBody, Long memberId) {
+    public void createMemberLog(HttpServletRequest request, int statusCode, String customCode, LogStatus logStatus, Object responseBody, String requestBody, Long memberId) {
         Member member = memberService.findById(memberId);
-        MemberLog memberLog = MemberLog.createMemberLog(request, statusCode, customCode, logStatus,  responseBody, requestBody, member);
+        MemberLog memberLog = MemberLog.createMemberLog(ClientIpParseUtil.getClientIp(request), request.getRequestURI(), request.getMethod(), statusCode, customCode, logStatus, responseBody, requestBody, member);
         commandLogPort.saveMemberLog(memberLog);
     }
 
     public void createLoginFailedLog(HttpServletRequest request, int statusCode, String customCode, LogStatus logStatus, String requestBody, String nickName) {
         LoginLog loginLog = loadLoginLogPort.findByNickname(nickName).orElse(null);
         String responseBody = loginLog != null ? loginLog.toSummaryString() : null;
-        AnonymousLog anonymousLog = AnonymousLog.createAnonymousLog(request, statusCode,customCode, logStatus, responseBody, requestBody, nickName);
+        AnonymousLog anonymousLog = AnonymousLog.createAnonymousLog(ClientIpParseUtil.getClientIp(request), request.getRequestURI(), request.getMethod(), statusCode, customCode, logStatus, responseBody, requestBody, nickName);
         commandLogPort.saveAnonymousLog(anonymousLog);
     }
 }
