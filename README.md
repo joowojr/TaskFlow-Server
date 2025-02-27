@@ -1,7 +1,7 @@
 <div align="center">
 
 
-![TaskFlow 소개 배너](https://github.com/user-attachments/assets/bc6041ad-f75e-41f4-ba0a-bbd3d68ec2c7)
+![TaskFlow 소개 배너](https://github.com/TaskFlow-CLAP/TaskFlow-Server/blob/develop/.github/image/TaskFlow 소개 배너.png)
 
 <br>
 
