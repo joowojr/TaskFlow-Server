@@ -1,6 +1,6 @@
 package clap.server.common.annotation.log;
 
-import clap.server.adapter.outbound.persistense.entity.log.constant.LogStatus;
+import clap.server.domain.model.log.constant.LogStatus;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

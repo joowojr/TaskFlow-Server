@@ -8,7 +8,7 @@ import clap.server.application.port.inbound.task.FindTaskDetailsUsecase;
 import clap.server.application.port.outbound.task.LoadAttachmentPort;
 import clap.server.application.port.outbound.task.LoadTaskPort;
 import clap.server.common.annotation.architecture.ApplicationService;
-import clap.server.domain.model.task.Attachment;
+import clap.server.domain.model.attachment.Attachment;
 import clap.server.domain.model.task.Task;
 import clap.server.exception.ApplicationException;
 import clap.server.exception.code.TaskErrorCode;

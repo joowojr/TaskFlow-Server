@@ -1,13 +1,13 @@
-package clap.server.adapter.outbound.persistense.entity.task;
+package clap.server.adapter.outbound.persistense.entity.attachment;
 
 import clap.server.adapter.outbound.persistense.entity.common.BaseTimeEntity;
+import clap.server.adapter.outbound.persistense.entity.task.TaskEntity;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
-import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.SQLRestriction;
 
 @Entity

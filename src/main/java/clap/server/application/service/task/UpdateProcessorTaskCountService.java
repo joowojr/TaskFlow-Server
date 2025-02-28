@@ -1,6 +1,6 @@
 package clap.server.application.service.task;
 
-import clap.server.adapter.outbound.persistense.entity.task.constant.TaskStatus;
+import clap.server.domain.model.task.constant.TaskStatus;
 import clap.server.application.port.outbound.member.CommandMemberPort;
 import clap.server.domain.model.member.Member;
 import clap.server.domain.policy.task.ProcessorTaskCountPolicy;

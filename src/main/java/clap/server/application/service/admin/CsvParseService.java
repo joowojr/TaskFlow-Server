@@ -1,6 +1,6 @@
 package clap.server.application.service.admin;
 
-import clap.server.adapter.outbound.persistense.entity.member.constant.MemberRole;
+import clap.server.domain.model.member.constant.MemberRole;
 import clap.server.application.port.outbound.member.LoadDepartmentPort;
 import clap.server.domain.model.member.Department;
 import clap.server.domain.model.member.Member;

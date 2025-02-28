@@ -1,7 +1,7 @@
 package clap.server.application.service.task;
 
 import clap.server.adapter.inbound.web.dto.task.request.UpdateTaskOrderRequest;
-import clap.server.adapter.outbound.persistense.entity.task.constant.TaskStatus;
+import clap.server.domain.model.task.constant.TaskStatus;
 import clap.server.application.port.inbound.domain.MemberService;
 import clap.server.application.port.inbound.domain.TaskService;
 import clap.server.application.port.outbound.task.LoadTaskPort;
@@ -12,7 +12,6 @@ import clap.server.domain.policy.task.TaskOrderCalculationPolicy;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;

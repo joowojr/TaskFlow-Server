@@ -1,6 +1,6 @@
 package clap.server.domain.model.member;
 
-import clap.server.adapter.outbound.persistense.entity.member.constant.DepartmentStatus;
+import clap.server.domain.model.member.constant.DepartmentStatus;
 import clap.server.domain.model.common.BaseTime;
 import lombok.AccessLevel;
 import lombok.Getter;

@@ -2,7 +2,7 @@ package clap.server.adapter.outbound.persistense.entity.task;
 
 import clap.server.adapter.outbound.persistense.entity.common.BaseTimeEntity;
 import clap.server.adapter.outbound.persistense.entity.member.MemberEntity;
-import clap.server.adapter.outbound.persistense.entity.task.constant.LabelColor;
+import clap.server.domain.model.task.constant.LabelColor;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;

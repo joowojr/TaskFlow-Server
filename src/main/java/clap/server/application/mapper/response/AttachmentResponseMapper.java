@@ -1,7 +1,7 @@
 package clap.server.application.mapper.response;
 
 import clap.server.adapter.inbound.web.dto.task.response.AttachmentResponse;
-import clap.server.domain.model.task.Attachment;
+import clap.server.domain.model.attachment.Attachment;
 
 import java.util.List;
 

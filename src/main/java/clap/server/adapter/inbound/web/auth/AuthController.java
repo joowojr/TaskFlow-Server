@@ -3,7 +3,7 @@ package clap.server.adapter.inbound.web.auth;
 import clap.server.adapter.inbound.security.service.SecurityUserDetails;
 import clap.server.adapter.inbound.web.dto.auth.request.LoginRequest;
 import clap.server.adapter.inbound.web.dto.auth.response.LoginResponse;
-import clap.server.adapter.outbound.persistense.entity.log.constant.LogStatus;
+import clap.server.domain.model.log.constant.LogStatus;
 import clap.server.application.port.inbound.auth.LoginUsecase;
 import clap.server.application.port.inbound.auth.LogoutUsecase;
 import clap.server.common.annotation.architecture.WebAdapter;

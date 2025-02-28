@@ -1,10 +1,10 @@
 package clap.server.application.service.task;
 
 import clap.server.adapter.inbound.web.dto.task.request.UpdateTaskOrderRequest;
-import clap.server.adapter.outbound.persistense.entity.member.constant.MemberRole;
-import clap.server.adapter.outbound.persistense.entity.notification.constant.NotificationType;
-import clap.server.adapter.outbound.persistense.entity.task.constant.TaskHistoryType;
-import clap.server.adapter.outbound.persistense.entity.task.constant.TaskStatus;
+import clap.server.domain.model.member.constant.MemberRole;
+import clap.server.domain.model.notification.constant.NotificationType;
+import clap.server.domain.model.task.constant.TaskHistoryType;
+import clap.server.domain.model.task.constant.TaskStatus;
 import clap.server.application.port.inbound.domain.MemberService;
 import clap.server.application.port.inbound.domain.TaskService;
 import clap.server.application.port.inbound.task.UpdateTaskOrderAndStatusUsecase;
@@ -24,7 +24,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j

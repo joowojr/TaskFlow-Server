@@ -1,6 +1,6 @@
 package clap.server.application.service.log;
 
-import clap.server.adapter.outbound.persistense.entity.log.constant.LogStatus;
+import clap.server.domain.model.log.constant.LogStatus;
 import clap.server.application.port.inbound.domain.MemberService;
 import clap.server.application.port.outbound.auth.loginLog.LoadLoginLogPort;
 import clap.server.application.port.outbound.log.CommandLogPort;

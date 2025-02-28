@@ -1,6 +1,6 @@
 package clap.server.domain.policy.task;
 
-import clap.server.adapter.outbound.persistense.entity.task.constant.TaskStatus;
+import clap.server.domain.model.task.constant.TaskStatus;
 import clap.server.common.annotation.architecture.Policy;
 import clap.server.domain.model.task.Task;
 import clap.server.exception.DomainException;

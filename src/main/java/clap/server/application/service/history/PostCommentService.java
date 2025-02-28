@@ -1,9 +1,9 @@
 package clap.server.application.service.history;
 
 import clap.server.adapter.inbound.web.dto.history.request.CreateCommentRequest;
-import clap.server.adapter.outbound.persistense.entity.member.constant.MemberRole;
-import clap.server.adapter.outbound.persistense.entity.notification.constant.NotificationType;
-import clap.server.adapter.outbound.persistense.entity.task.constant.TaskHistoryType;
+import clap.server.domain.model.member.constant.MemberRole;
+import clap.server.domain.model.notification.constant.NotificationType;
+import clap.server.domain.model.task.constant.TaskHistoryType;
 import clap.server.application.port.inbound.domain.MemberService;
 import clap.server.application.port.inbound.domain.TaskService;
 import clap.server.application.port.inbound.history.SaveCommentAttachmentUsecase;
@@ -24,7 +24,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Objects;
 
-import static clap.server.domain.model.task.Attachment.formatFileSize;
+import static clap.server.domain.model.attachment.Attachment.formatFileSize;
 
 @ApplicationService
 @RequiredArgsConstructor

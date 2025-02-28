@@ -4,8 +4,7 @@ package clap.server.application.mapper.response;
 import clap.server.adapter.inbound.web.dto.admin.response.MemberDetailsResponse;
 import clap.server.adapter.inbound.web.dto.member.response.MemberDetailInfoResponse;
 import clap.server.adapter.inbound.web.dto.member.response.MemberProfileResponse;
-import clap.server.adapter.outbound.persistense.entity.member.constant.MemberRole;
-import clap.server.adapter.outbound.persistense.entity.member.constant.MemberStatus;
+import clap.server.domain.model.member.constant.MemberRole;
 import clap.server.domain.model.member.Member;
 
 public class MemberResponseMapper {

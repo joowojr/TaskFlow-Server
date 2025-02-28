@@ -2,7 +2,7 @@ package clap.server.application.service.admin;
 
 import clap.server.adapter.inbound.web.dto.admin.request.UpdateMemberRequest;
 import clap.server.adapter.inbound.web.dto.admin.response.MemberDetailsResponse;
-import clap.server.adapter.outbound.persistense.entity.member.constant.MemberRole;
+import clap.server.domain.model.member.constant.MemberRole;
 import clap.server.application.mapper.response.MemberResponseMapper;
 import clap.server.application.port.inbound.admin.MemberDetailUsecase;
 import clap.server.application.port.inbound.admin.UpdateMemberUsecase;

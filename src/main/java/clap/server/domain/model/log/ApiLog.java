@@ -1,6 +1,6 @@
 package clap.server.domain.model.log;
 
-import clap.server.adapter.outbound.persistense.entity.log.constant.LogStatus;
+import clap.server.domain.model.log.constant.LogStatus;
 import clap.server.domain.model.common.BaseTime;
 import lombok.*;
 import lombok.experimental.SuperBuilder;

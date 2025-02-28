@@ -1,4 +1,4 @@
-package clap.server.adapter.outbound.persistense.entity.log.constant;
+package clap.server.domain.model.log.constant;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

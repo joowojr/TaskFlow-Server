@@ -1,9 +1,8 @@
 package clap.server.adapter.outbound.persistense.mapper;
 
 import clap.server.adapter.outbound.persistense.entity.log.AnonymousLogEntity;
-import clap.server.adapter.outbound.persistense.entity.log.ApiLogEntity;
 import clap.server.adapter.outbound.persistense.entity.log.MemberLogEntity;
-import clap.server.adapter.outbound.persistense.entity.log.constant.ApiHttpMethod;
+import clap.server.domain.model.log.constant.ApiHttpMethod;
 import clap.server.adapter.outbound.persistense.entity.member.MemberEntity;
 import clap.server.domain.model.log.AnonymousLog;
 import clap.server.domain.model.log.ApiLog;

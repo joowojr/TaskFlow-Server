@@ -1,7 +1,7 @@
 package clap.server.application.service.webhook;
 
 import clap.server.adapter.inbound.web.dto.notification.request.SseRequest;
-import clap.server.adapter.outbound.persistense.entity.notification.constant.NotificationType;
+import clap.server.domain.model.notification.constant.NotificationType;
 import clap.server.application.port.outbound.webhook.SendSsePort;
 import clap.server.domain.model.member.Member;
 import clap.server.domain.model.task.Task;

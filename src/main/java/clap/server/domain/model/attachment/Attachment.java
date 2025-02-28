@@ -1,6 +1,8 @@
-package clap.server.domain.model.task;
+package clap.server.domain.model.attachment;
 
 import clap.server.domain.model.common.BaseTime;
+import clap.server.domain.model.task.Comment;
+import clap.server.domain.model.task.Task;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

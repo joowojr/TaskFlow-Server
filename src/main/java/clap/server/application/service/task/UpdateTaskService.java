@@ -1,15 +1,14 @@
 package clap.server.application.service.task;
 
 import clap.server.adapter.inbound.web.dto.task.request.UpdateTaskProcessorRequest;
-import clap.server.adapter.outbound.persistense.entity.member.constant.MemberRole;
-import clap.server.adapter.outbound.persistense.entity.notification.constant.NotificationType;
-import clap.server.adapter.outbound.persistense.entity.task.constant.TaskHistoryType;
-import clap.server.adapter.outbound.persistense.entity.task.constant.TaskStatus;
+import clap.server.domain.model.member.constant.MemberRole;
+import clap.server.domain.model.notification.constant.NotificationType;
+import clap.server.domain.model.task.constant.TaskHistoryType;
+import clap.server.domain.model.task.constant.TaskStatus;
 import clap.server.application.port.inbound.domain.MemberService;
 import clap.server.application.port.inbound.domain.TaskService;
 import clap.server.application.port.inbound.task.UpdateTaskProcessorUsecase;
 import clap.server.application.port.inbound.task.UpdateTaskStatusUsecase;
-import clap.server.application.port.outbound.task.LoadTaskPort;
 import clap.server.application.port.outbound.taskhistory.CommandTaskHistoryPort;
 import clap.server.application.service.webhook.SendNotificationService;
 import clap.server.common.annotation.architecture.ApplicationService;

@@ -1,4 +1,4 @@
-package clap.server.adapter.outbound.persistense.entity.task.constant;
+package clap.server.domain.model.task.constant;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

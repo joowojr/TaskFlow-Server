@@ -1,7 +1,7 @@
 package clap.server.adapter.outbound.persistense.entity.member;
 
 import clap.server.adapter.outbound.persistense.entity.common.BaseTimeEntity;
-import clap.server.adapter.outbound.persistense.entity.member.constant.DepartmentStatus;
+import clap.server.domain.model.member.constant.DepartmentStatus;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;

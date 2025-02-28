@@ -1,7 +1,7 @@
 package clap.server.domain.policy.member;
 
-import clap.server.adapter.outbound.persistense.entity.member.constant.MemberRole;
-import clap.server.adapter.outbound.persistense.entity.member.constant.MemberStatus;
+import clap.server.domain.model.member.constant.MemberRole;
+import clap.server.domain.model.member.constant.MemberStatus;
 import clap.server.common.annotation.architecture.Policy;
 import clap.server.domain.model.member.Department;
 import clap.server.domain.model.member.Member;

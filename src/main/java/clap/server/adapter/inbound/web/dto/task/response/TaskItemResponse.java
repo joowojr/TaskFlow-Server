@@ -1,8 +1,7 @@
 package clap.server.adapter.inbound.web.dto.task.response;
 
-import clap.server.adapter.outbound.persistense.entity.task.constant.LabelColor;
-import clap.server.adapter.outbound.persistense.entity.task.constant.TaskStatus;
-import clap.server.domain.model.task.Label;
+import clap.server.domain.model.task.constant.LabelColor;
+import clap.server.domain.model.task.constant.TaskStatus;
 
 import java.time.LocalDateTime;
 

@@ -1,6 +1,6 @@
 package clap.server.application.port.outbound.task;
 
-import clap.server.domain.model.task.Attachment;
+import clap.server.domain.model.attachment.Attachment;
 
 import java.util.List;
 

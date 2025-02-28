@@ -2,12 +2,11 @@ package clap.server.config.aop;
 
 import clap.server.adapter.inbound.security.service.SecurityUserDetails;
 
-import clap.server.adapter.outbound.persistense.entity.log.constant.LogStatus;
+import clap.server.domain.model.log.constant.LogStatus;
 import clap.server.application.port.outbound.log.LoggingPort;
 import clap.server.common.annotation.log.LogType;
 import clap.server.exception.BaseException;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;

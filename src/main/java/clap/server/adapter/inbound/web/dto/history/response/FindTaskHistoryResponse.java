@@ -1,6 +1,6 @@
 package clap.server.adapter.inbound.web.dto.history.response;
 
-import clap.server.adapter.outbound.persistense.entity.task.constant.TaskHistoryType;
+import clap.server.domain.model.task.constant.TaskHistoryType;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

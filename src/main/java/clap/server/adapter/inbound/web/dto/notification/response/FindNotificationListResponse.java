@@ -1,7 +1,7 @@
 package clap.server.adapter.inbound.web.dto.notification.response;
 
 
-import clap.server.adapter.outbound.persistense.entity.notification.constant.NotificationType;
+import clap.server.domain.model.notification.constant.NotificationType;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 import java.time.LocalDateTime;

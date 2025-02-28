@@ -12,7 +12,7 @@ import clap.server.application.port.outbound.task.CommandAttachmentPort;
 import clap.server.application.port.outbound.task.LoadAttachmentPort;
 import clap.server.application.service.attachment.AttachmentService;
 import clap.server.common.annotation.architecture.ApplicationService;
-import clap.server.domain.model.task.Attachment;
+import clap.server.domain.model.attachment.Attachment;
 import clap.server.domain.model.task.Category;
 import clap.server.domain.model.task.Label;
 import clap.server.domain.model.task.Task;

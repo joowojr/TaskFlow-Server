@@ -2,7 +2,6 @@ package clap.server.application.mapper.response;
 
 import clap.server.adapter.inbound.web.dto.history.response.FindTaskHistoryResponse;
 
-import clap.server.domain.model.task.Attachment;
 import clap.server.domain.model.task.TaskHistory;
 
 import java.util.List;

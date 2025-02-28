@@ -2,7 +2,7 @@ package clap.server.application.service.task;
 
 import clap.server.adapter.inbound.web.dto.task.request.ApprovalTaskRequest;
 import clap.server.adapter.inbound.web.dto.task.response.ApprovalTaskResponse;
-import clap.server.adapter.outbound.persistense.entity.task.constant.TaskStatus;
+import clap.server.domain.model.task.constant.TaskStatus;
 import clap.server.TestDataFactory;
 import clap.server.application.port.inbound.domain.CategoryService;
 import clap.server.application.port.inbound.domain.LabelService;

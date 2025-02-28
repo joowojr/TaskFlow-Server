@@ -1,8 +1,7 @@
 package clap.server.domain.model.task;
 
-import clap.server.adapter.inbound.web.dto.label.request.CreateLabelRequest;
 import clap.server.adapter.inbound.web.dto.label.request.EditLabelRequest;
-import clap.server.adapter.outbound.persistense.entity.task.constant.LabelColor;
+import clap.server.domain.model.task.constant.LabelColor;
 import clap.server.domain.model.common.BaseTime;
 import clap.server.domain.model.member.Member;
 import lombok.AccessLevel;
