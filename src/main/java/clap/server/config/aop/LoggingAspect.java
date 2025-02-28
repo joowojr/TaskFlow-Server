@@ -32,7 +32,6 @@ import java.nio.charset.StandardCharsets;
 @Component
 @RequiredArgsConstructor
 public class LoggingAspect {
-    private final ObjectMapper objectMapper;
     private final LoggingPort loggingPort;
 
     @Pointcut("execution(* clap.server.adapter.inbound.web..*Controller.*(..))")
@@ -67,14 +66,15 @@ public class LoggingAspect {
             }
 
             if (logStatus != null) {
+                Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
                 if (LogStatus.LOGIN.equals(logStatus)) {
                     handleLoginLog(statusCode, request, customCode, logStatus, result);
 
                 } else {
-                    if (!isUserAuthenticated()) {
+                    if (!isUserAuthenticated(authentication)) {
                         log.error("로그인 시도 로그를 기록할 수 없음");
                     } else {
-                        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+                        Object principal = authentication.getPrincipal();
                         if (principal instanceof SecurityUserDetails userDetails) {
                             loggingPort.createMemberLog(request, statusCode, customCode, logStatus, result, getRequestBody(request), userDetails.getUserId());
                         }
@@ -115,8 +115,7 @@ public class LoggingAspect {
         }
     }
 
-    private boolean isUserAuthenticated() {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+    private boolean isUserAuthenticated(Authentication authentication) {
         return authentication != null && authentication.isAuthenticated()
                 && !"anonymousUser".equals(authentication.getPrincipal());
     }
