@@ -13,6 +13,7 @@ import clap.server.application.port.inbound.domain.LabelService;
 import clap.server.application.port.inbound.domain.MemberService;
 import clap.server.application.port.inbound.domain.TaskService;
 import clap.server.application.port.inbound.task.ApprovalTaskUsecase;
+import clap.server.application.port.outbound.member.LoadMemberPort;
 import clap.server.application.port.outbound.taskhistory.CommandTaskHistoryPort;
 import clap.server.application.service.webhook.SendNotificationService;
 import clap.server.common.annotation.architecture.ApplicationService;
@@ -22,6 +23,8 @@ import clap.server.domain.model.task.Label;
 import clap.server.domain.model.task.Task;
 import clap.server.domain.model.task.TaskHistory;
 import clap.server.domain.policy.task.RequestedTaskUpdatePolicy;
+import clap.server.exception.ApplicationException;
+import clap.server.exception.code.MemberErrorCode;
 import lombok.RequiredArgsConstructor;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -34,6 +37,7 @@ import java.util.stream.Stream;
 @RequiredArgsConstructor
 public class ApprovalTaskService implements ApprovalTaskUsecase {
     private final MemberService memberService;
+    private final LoadMemberPort loadMemberPort;
     private final TaskService taskService;
     private final CategoryService categoryService;
     private final LabelService labelService;
@@ -46,7 +50,9 @@ public class ApprovalTaskService implements ApprovalTaskUsecase {
     @Override
     @Transactional
     public ApprovalTaskResponse approvalTaskByReviewer(Long reviewerId, Long taskId, ApprovalTaskRequest approvalTaskRequest) {
-        Member reviewer = memberService.findReviewer(reviewerId);
+        Member reviewer =  loadMemberPort.findReviewerById(reviewerId).orElseThrow(
+                ()-> new ApplicationException(MemberErrorCode.NOT_A_REVIEWER)
+        );
         Task task = taskService.findById(taskId);
         Member processor = memberService.findActiveMemberWithDepartment(approvalTaskRequest.processorId());
         Category category = categoryService.findById(approvalTaskRequest.categoryId());
