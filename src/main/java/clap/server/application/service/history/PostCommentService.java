@@ -8,12 +8,11 @@ import clap.server.application.port.inbound.domain.MemberService;
 import clap.server.application.port.inbound.domain.TaskService;
 import clap.server.application.port.inbound.history.SaveCommentAttachmentUsecase;
 import clap.server.application.port.inbound.history.SaveCommentUsecase;
-import clap.server.application.port.outbound.s3.S3UploadPort;
 import clap.server.application.port.outbound.task.CommandCommentPort;
 import clap.server.application.port.outbound.taskhistory.CommandTaskHistoryPort;
+import clap.server.application.service.attachment.AttachmentService;
 import clap.server.application.service.webhook.SendNotificationService;
 import clap.server.common.annotation.architecture.ApplicationService;
-import clap.server.common.constants.FilePathConstants;
 import clap.server.domain.model.member.Member;
 import clap.server.domain.model.task.Comment;
 import clap.server.domain.model.task.Task;
@@ -34,7 +33,7 @@ public class PostCommentService implements SaveCommentUsecase, SaveCommentAttach
     private final MemberService memberService;
     private final TaskService taskService;
     private final CommandCommentPort commandCommentPort;
-    private final S3UploadPort s3UploadPort;
+    private final AttachmentService attachmentService;
 
     private final CommandTaskHistoryPort commandTaskHistoryPort;
     private final SendNotificationService sendNotificationService;
@@ -71,7 +70,7 @@ public class PostCommentService implements SaveCommentUsecase, SaveCommentAttach
 
         taskCommentPolicy.validateCommentPermission(task, member);
 
-        String fileUrl = s3UploadPort.uploadSingleFile(FilePathConstants.TASK_COMMENT, file);
+        String fileUrl = attachmentService.uploadCommentAttachment(file);
         String fileName = file.getOriginalFilename();
 
         Comment comment = Comment.createComment(member, task, null, fileName, fileUrl, formatFileSize(file.getSize()));
