@@ -2,7 +2,8 @@ package clap.server.adapter.outbound.infrastructure.elastic;
 
 import clap.server.adapter.outbound.infrastructure.elastic.document.TaskDocument;
 import clap.server.adapter.outbound.infrastructure.elastic.repository.TaskElasticRepository;
-import clap.server.application.port.outbound.task.TaskDocumentPort;
+import clap.server.application.port.outbound.task.CommandTaskDocumentPort;
+import clap.server.application.port.outbound.task.LoadTaskDocumentPort;
 import clap.server.common.annotation.architecture.InfrastructureAdapter;
 import clap.server.domain.model.task.Task;
 import co.elastic.clients.elasticsearch._types.aggregations.AggregationBuilders;
@@ -20,7 +21,7 @@ import java.util.stream.Collectors;
 
 @InfrastructureAdapter
 @RequiredArgsConstructor
-public class TaskDocumentAdapter implements TaskDocumentPort {
+public class TaskTaskDocumentAdapter implements LoadTaskDocumentPort, CommandTaskDocumentPort {
     private final TaskElasticRepository taskElasticRepository;
     private final ElasticsearchOperations elasticsearchOperations;
     private static final String TIME_ZONE = "Asia/Seoul";

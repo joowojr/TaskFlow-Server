@@ -1,13 +1,8 @@
 package clap.server.application.port.outbound.task;
 
-import clap.server.domain.model.task.Task;
-
-import java.util.List;
 import java.util.Map;
 
-public interface TaskDocumentPort {
-    void saveStatistics(List<Task> statistics);
-
+public interface LoadTaskDocumentPort {
     Map<String, Long> findPeriodTaskRequestByPeriod(String period);
 
     Map<String, Long> findPeriodTaskProcessByPeriod(String period);
