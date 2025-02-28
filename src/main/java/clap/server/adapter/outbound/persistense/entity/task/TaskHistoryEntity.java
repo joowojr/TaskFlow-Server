@@ -2,7 +2,7 @@ package clap.server.adapter.outbound.persistense.entity.task;
 
 import clap.server.adapter.outbound.persistense.entity.common.BaseTimeEntity;
 import clap.server.adapter.outbound.persistense.entity.member.MemberEntity;
-import clap.server.adapter.outbound.persistense.entity.task.constant.TaskHistoryType;
+import clap.server.domain.model.task.constant.TaskHistoryType;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;

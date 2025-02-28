@@ -1,8 +1,8 @@
 package clap.server.adapter.outbound.persistense.mapper;
 
-import clap.server.adapter.outbound.persistense.entity.task.AttachmentEntity;
+import clap.server.adapter.outbound.persistense.entity.attachment.AttachmentEntity;
 import clap.server.adapter.outbound.persistense.mapper.common.PersistenceMapper;
-import clap.server.domain.model.task.Attachment;
+import clap.server.domain.model.attachment.Attachment;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

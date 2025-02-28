@@ -2,7 +2,7 @@ package clap.server.adapter.outbound.persistense.entity.notification;
 
 import clap.server.adapter.outbound.persistense.entity.common.BaseTimeEntity;
 import clap.server.adapter.outbound.persistense.entity.member.MemberEntity;
-import clap.server.adapter.outbound.persistense.entity.notification.constant.NotificationType;
+import clap.server.domain.model.notification.constant.NotificationType;
 import clap.server.adapter.outbound.persistense.entity.task.TaskEntity;
 import jakarta.persistence.*;
 import lombok.AccessLevel;

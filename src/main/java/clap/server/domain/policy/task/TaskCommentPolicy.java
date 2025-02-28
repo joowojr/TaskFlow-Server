@@ -1,6 +1,6 @@
 package clap.server.domain.policy.task;
 
-import clap.server.adapter.outbound.persistense.entity.member.constant.MemberRole;
+import clap.server.domain.model.member.constant.MemberRole;
 import clap.server.common.annotation.architecture.Policy;
 import clap.server.domain.model.member.Member;
 import clap.server.domain.model.task.Task;

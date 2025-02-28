@@ -1,7 +1,7 @@
 package clap.server.adapter.inbound.web.dto.auth.response;
 
-import clap.server.adapter.outbound.persistense.entity.member.constant.MemberRole;
-import clap.server.adapter.outbound.persistense.entity.member.constant.MemberStatus;
+import clap.server.domain.model.member.constant.MemberRole;
+import clap.server.domain.model.member.constant.MemberStatus;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 public record MemberInfoResponse(

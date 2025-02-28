@@ -1,6 +1,6 @@
 package clap.server.adapter.inbound.web.dto.label.request;
 
-import clap.server.adapter.outbound.persistense.entity.task.constant.LabelColor;
+import clap.server.domain.model.task.constant.LabelColor;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

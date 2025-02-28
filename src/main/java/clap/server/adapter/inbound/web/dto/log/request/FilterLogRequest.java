@@ -1,6 +1,6 @@
 package clap.server.adapter.inbound.web.dto.log.request;
 
-import clap.server.adapter.outbound.persistense.entity.log.constant.LogStatus;
+import clap.server.domain.model.log.constant.LogStatus;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotNull;
 import org.springdoc.core.annotations.ParameterObject;

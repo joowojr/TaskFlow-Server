@@ -2,8 +2,8 @@ package clap.server.adapter.outbound.persistense;
 
 import clap.server.adapter.inbound.web.dto.admin.request.FindMemberRequest;
 import clap.server.adapter.outbound.persistense.entity.member.MemberEntity;
-import clap.server.adapter.outbound.persistense.entity.member.constant.MemberRole;
-import clap.server.adapter.outbound.persistense.entity.member.constant.MemberStatus;
+import clap.server.domain.model.member.constant.MemberRole;
+import clap.server.domain.model.member.constant.MemberStatus;
 import clap.server.adapter.outbound.persistense.mapper.MemberPersistenceMapper;
 import clap.server.adapter.outbound.persistense.repository.member.MemberRepository;
 import clap.server.application.port.outbound.member.CommandMemberPort;

@@ -1,16 +1,15 @@
 package clap.server.adapter.outbound.persistense;
 
-import clap.server.adapter.outbound.persistense.entity.task.AttachmentEntity;
+import clap.server.adapter.outbound.persistense.entity.attachment.AttachmentEntity;
 import clap.server.adapter.outbound.persistense.mapper.AttachmentPersistenceMapper;
 import clap.server.adapter.outbound.persistense.repository.task.AttachmentRepository;
 import clap.server.application.port.outbound.task.CommandAttachmentPort;
 import clap.server.application.port.outbound.task.LoadAttachmentPort;
 import clap.server.common.annotation.architecture.PersistenceAdapter;
-import clap.server.domain.model.task.Attachment;
+import clap.server.domain.model.attachment.Attachment;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 

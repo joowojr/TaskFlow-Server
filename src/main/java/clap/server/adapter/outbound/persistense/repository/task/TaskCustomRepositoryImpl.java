@@ -4,7 +4,7 @@ import clap.server.adapter.inbound.web.dto.task.request.FilterTaskBoardRequest;
 import clap.server.adapter.inbound.web.dto.task.request.FilterTaskListRequest;
 import clap.server.adapter.inbound.web.dto.task.request.FilterTeamStatusRequest;
 import clap.server.adapter.outbound.persistense.entity.task.TaskEntity;
-import clap.server.adapter.outbound.persistense.entity.task.constant.TaskStatus;
+import clap.server.domain.model.task.constant.TaskStatus;
 import com.querydsl.core.BooleanBuilder;
 import com.querydsl.core.types.OrderSpecifier;
 import com.querydsl.core.types.dsl.DateTimePath;

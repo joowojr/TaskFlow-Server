@@ -1,6 +1,6 @@
 package clap.server.adapter.inbound.web.dto.notification.request;
 
-import clap.server.adapter.outbound.persistense.entity.notification.constant.NotificationType;
+import clap.server.domain.model.notification.constant.NotificationType;
 
 public record SseRequest(
         String taskTitle,

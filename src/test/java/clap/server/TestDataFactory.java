@@ -1,10 +1,10 @@
 package clap.server;
 
-import clap.server.adapter.outbound.persistense.entity.member.constant.DepartmentStatus;
-import clap.server.adapter.outbound.persistense.entity.member.constant.MemberRole;
-import clap.server.adapter.outbound.persistense.entity.member.constant.MemberStatus;
-import clap.server.adapter.outbound.persistense.entity.task.constant.LabelColor;
-import clap.server.adapter.outbound.persistense.entity.task.constant.TaskStatus;
+import clap.server.domain.model.member.constant.DepartmentStatus;
+import clap.server.domain.model.member.constant.MemberRole;
+import clap.server.domain.model.member.constant.MemberStatus;
+import clap.server.domain.model.task.constant.LabelColor;
+import clap.server.domain.model.task.constant.TaskStatus;
 import clap.server.domain.model.member.Department;
 import clap.server.domain.model.member.Member;
 import clap.server.domain.model.member.MemberInfo;

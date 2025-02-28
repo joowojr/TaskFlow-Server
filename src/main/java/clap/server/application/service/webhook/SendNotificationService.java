@@ -1,7 +1,7 @@
 package clap.server.application.service.webhook;
 
 import clap.server.adapter.outbound.api.data.PushNotificationTemplate;
-import clap.server.adapter.outbound.persistense.entity.notification.constant.NotificationType;
+import clap.server.domain.model.notification.constant.NotificationType;
 import clap.server.application.port.outbound.notification.CommandNotificationPort;
 import clap.server.common.annotation.architecture.ApplicationService;
 import clap.server.domain.model.member.Member;

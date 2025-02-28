@@ -2,7 +2,7 @@ package clap.server.adapter.inbound.web.history;
 
 import clap.server.adapter.inbound.security.service.SecurityUserDetails;
 import clap.server.adapter.inbound.web.dto.history.request.CreateCommentRequest;
-import clap.server.adapter.outbound.persistense.entity.log.constant.LogStatus;
+import clap.server.domain.model.log.constant.LogStatus;
 import clap.server.application.port.inbound.history.SaveCommentAttachmentUsecase;
 import clap.server.application.port.inbound.history.SaveCommentUsecase;
 import clap.server.common.annotation.architecture.WebAdapter;

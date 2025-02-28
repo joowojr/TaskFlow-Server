@@ -6,7 +6,7 @@ import clap.server.adapter.inbound.web.dto.task.request.UpdateTaskLabelRequest;
 import clap.server.adapter.inbound.web.dto.task.request.UpdateTaskProcessorRequest;
 import clap.server.adapter.inbound.web.dto.task.request.UpdateTaskStatusRequest;
 import clap.server.adapter.inbound.web.dto.task.response.ApprovalTaskResponse;
-import clap.server.adapter.outbound.persistense.entity.log.constant.LogStatus;
+import clap.server.domain.model.log.constant.LogStatus;
 import clap.server.application.port.inbound.task.ApprovalTaskUsecase;
 import clap.server.application.port.inbound.task.UpdateTaskLabelUsecase;
 import clap.server.application.port.inbound.task.UpdateTaskProcessorUsecase;

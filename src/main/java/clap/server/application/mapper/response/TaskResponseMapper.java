@@ -2,9 +2,9 @@ package clap.server.application.mapper.response;
 
 
 import clap.server.adapter.inbound.web.dto.task.response.*;
-import clap.server.adapter.outbound.persistense.entity.task.constant.TaskStatus;
+import clap.server.domain.model.task.constant.TaskStatus;
 import clap.server.domain.model.member.Member;
-import clap.server.domain.model.task.Attachment;
+import clap.server.domain.model.attachment.Attachment;
 import clap.server.domain.model.task.Label;
 import clap.server.domain.model.task.Task;
 

@@ -1,8 +1,8 @@
 package clap.server.adapter.outbound.persistense.entity.log;
 
 import clap.server.adapter.outbound.persistense.entity.common.BaseTimeEntity;
-import clap.server.adapter.outbound.persistense.entity.log.constant.ApiHttpMethod;
-import clap.server.adapter.outbound.persistense.entity.log.constant.LogStatus;
+import clap.server.domain.model.log.constant.ApiHttpMethod;
+import clap.server.domain.model.log.constant.LogStatus;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;

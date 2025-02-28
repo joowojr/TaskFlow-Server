@@ -4,7 +4,7 @@ import clap.server.adapter.inbound.web.dto.task.request.FilterTaskBoardRequest;
 import clap.server.adapter.inbound.web.dto.task.request.FilterTaskListRequest;
 import clap.server.adapter.inbound.web.dto.task.request.FilterTeamStatusRequest;
 import clap.server.adapter.outbound.persistense.entity.task.TaskEntity;
-import clap.server.adapter.outbound.persistense.entity.task.constant.TaskStatus;
+import clap.server.domain.model.task.constant.TaskStatus;
 import clap.server.adapter.outbound.persistense.mapper.TaskPersistenceMapper;
 import clap.server.adapter.outbound.persistense.repository.task.TaskRepository;
 import clap.server.application.port.outbound.task.CommandTaskPort;

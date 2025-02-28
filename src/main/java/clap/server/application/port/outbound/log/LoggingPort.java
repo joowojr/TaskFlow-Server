@@ -1,6 +1,6 @@
 package clap.server.application.port.outbound.log;
 
-import clap.server.adapter.outbound.persistense.entity.log.constant.LogStatus;
+import clap.server.domain.model.log.constant.LogStatus;
 import jakarta.servlet.http.HttpServletRequest;
 
 public interface LoggingPort {

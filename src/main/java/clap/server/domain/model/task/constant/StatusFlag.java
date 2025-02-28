@@ -1,11 +1,11 @@
-package clap.server.adapter.outbound.persistense.entity.member.constant;
+package clap.server.domain.model.task.constant;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 @Getter
 @RequiredArgsConstructor
-public enum DepartmentStatus {
+public enum StatusFlag {
     ACTIVE("활성"),
     INACTIVE("비활성");
 

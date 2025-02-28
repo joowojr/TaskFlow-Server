@@ -1,8 +1,6 @@
 package clap.server.domain.model.log;
 
-import clap.server.adapter.outbound.persistense.entity.log.constant.LogStatus;
-import clap.server.common.utils.ClientIpParseUtil;
-import jakarta.servlet.http.HttpServletRequest;
+import clap.server.domain.model.log.constant.LogStatus;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;

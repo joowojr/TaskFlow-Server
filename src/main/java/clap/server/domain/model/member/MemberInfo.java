@@ -1,6 +1,6 @@
 package clap.server.domain.model.member;
 
-import clap.server.adapter.outbound.persistense.entity.member.constant.MemberRole;
+import clap.server.domain.model.member.constant.MemberRole;
 import clap.server.exception.DomainException;
 import clap.server.exception.code.MemberErrorCode;
 import lombok.AccessLevel;

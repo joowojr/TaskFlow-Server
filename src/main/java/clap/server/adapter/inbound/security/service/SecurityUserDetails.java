@@ -1,7 +1,7 @@
 package clap.server.adapter.inbound.security.service;
 
 import clap.server.adapter.outbound.persistense.entity.member.MemberEntity;
-import clap.server.adapter.outbound.persistense.entity.member.constant.MemberStatus;
+import clap.server.domain.model.member.constant.MemberStatus;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AccessLevel;
 import lombok.Builder;

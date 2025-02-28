@@ -3,7 +3,7 @@ package clap.server.application.mapper.response;
 import clap.server.adapter.inbound.web.dto.task.response.TeamStatusResponse;
 import clap.server.adapter.inbound.web.dto.task.response.TeamTaskItemResponse;
 import clap.server.adapter.inbound.web.dto.task.response.TeamTaskResponse;
-import clap.server.adapter.outbound.persistense.entity.task.constant.TaskStatus;
+import clap.server.domain.model.task.constant.TaskStatus;
 import clap.server.domain.model.task.Task;
 
 import java.util.LinkedHashMap;
@@ -11,8 +11,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import static clap.server.adapter.outbound.persistense.entity.task.constant.TaskStatus.IN_PROGRESS;
-import static clap.server.adapter.outbound.persistense.entity.task.constant.TaskStatus.IN_REVIEWING;
+import static clap.server.domain.model.task.constant.TaskStatus.IN_PROGRESS;
+import static clap.server.domain.model.task.constant.TaskStatus.IN_REVIEWING;
 
 public class TeamTaskResponseMapper {
 

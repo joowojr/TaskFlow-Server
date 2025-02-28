@@ -1,6 +1,6 @@
 package clap.server.domain.model.task;
 
-import clap.server.adapter.outbound.persistense.entity.task.constant.TaskStatus;
+import clap.server.domain.model.task.constant.TaskStatus;
 import clap.server.domain.model.common.BaseTime;
 import clap.server.domain.model.member.Member;
 import clap.server.exception.ApplicationException;

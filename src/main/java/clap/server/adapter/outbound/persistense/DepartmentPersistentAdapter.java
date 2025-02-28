@@ -1,7 +1,7 @@
 package clap.server.adapter.outbound.persistense;
 
 import clap.server.adapter.outbound.persistense.entity.member.DepartmentEntity;
-import clap.server.adapter.outbound.persistense.entity.member.constant.DepartmentStatus;
+import clap.server.domain.model.member.constant.DepartmentStatus;
 import clap.server.adapter.outbound.persistense.mapper.DepartmentPersistenceMapper;
 import clap.server.adapter.outbound.persistense.repository.member.DepartmentRepository;
 import clap.server.application.port.outbound.member.CommandDepartmentPort;

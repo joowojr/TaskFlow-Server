@@ -4,7 +4,7 @@ import clap.server.adapter.inbound.security.service.SecurityUserDetails;
 import clap.server.adapter.inbound.web.dto.task.request.CreateTaskRequest;
 import clap.server.adapter.inbound.web.dto.task.request.UpdateTaskRequest;
 import clap.server.adapter.inbound.web.dto.task.response.CreateTaskResponse;
-import clap.server.adapter.outbound.persistense.entity.log.constant.LogStatus;
+import clap.server.domain.model.log.constant.LogStatus;
 import clap.server.application.port.inbound.task.CreateTaskUsecase;
 import clap.server.application.port.inbound.task.UpdateTaskUsecase;
 import clap.server.common.annotation.architecture.WebAdapter;
