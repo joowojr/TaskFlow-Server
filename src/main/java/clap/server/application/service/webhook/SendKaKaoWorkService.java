@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class SendKaKaoWorkService implements NotificationSender {
+public class SendKaKaoWorkService {
 
     private final SendKaKaoWorkPort sendKaKaoWorkPort;
 
