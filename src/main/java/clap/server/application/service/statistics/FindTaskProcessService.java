@@ -3,7 +3,8 @@ package clap.server.application.service.statistics;
 import clap.server.adapter.inbound.web.dto.statistics.StatisticsResponse;
 import clap.server.application.mapper.response.StatisticsResponseMapper;
 import clap.server.application.port.inbound.statistics.FindTaskProcessUsecase;
-import clap.server.application.port.outbound.task.TaskDocumentPort;
+import clap.server.application.port.outbound.task.CommandTaskDocumentPort;
+import clap.server.application.port.outbound.task.LoadTaskDocumentPort;
 import clap.server.common.annotation.architecture.ApplicationService;
 import clap.server.domain.policy.task.TaskStatisticsPolicy;
 import lombok.RequiredArgsConstructor;
@@ -15,7 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
 public class FindTaskProcessService implements FindTaskProcessUsecase {
-    private final TaskDocumentPort taskDocumentPort;
+    private final LoadTaskDocumentPort taskDocumentPort;
     private final TaskStatisticsPolicy taskStatisticsPolicy;
 
     @Override

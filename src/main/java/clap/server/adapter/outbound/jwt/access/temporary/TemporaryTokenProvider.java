@@ -84,7 +84,6 @@ public class TemporaryTokenProvider implements JwtProvider {
                     .parseClaimsJws(token)
                     .getBody();
         } catch (Exception e) {
-            log.warn("Token is invalid: {}", e.getMessage());
             throw new JwtException(AuthErrorCode.INVALID_TOKEN);
         }
     }

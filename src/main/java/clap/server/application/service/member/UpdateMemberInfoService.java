@@ -6,6 +6,7 @@ import clap.server.application.port.inbound.member.UpdateMemberInfoUsecase;
 import clap.server.application.port.outbound.member.CommandMemberPort;
 import clap.server.application.port.outbound.member.LoadMemberPort;
 import clap.server.application.port.outbound.s3.S3UploadPort;
+import clap.server.application.service.attachment.AttachmentService;
 import clap.server.common.annotation.architecture.ApplicationService;
 import clap.server.domain.model.member.Member;
 import clap.server.common.constants.FilePathConstants;
@@ -18,7 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Transactional
 class UpdateMemberInfoService implements UpdateMemberInfoUsecase {
     private final MemberService memberService;
-    private final S3UploadPort s3UploadPort;
+    private final AttachmentService attachmentService;
     private final CommandMemberPort commandMemberPort;
 
     @Override
@@ -28,7 +29,7 @@ class UpdateMemberInfoService implements UpdateMemberInfoUsecase {
             member.setImageUrl(null);
         }
         else {
-            String profileImageUrl = profileImage != null ? s3UploadPort.uploadSingleFile(FilePathConstants.MEMBER_IMAGE, profileImage) : member.getImageUrl();
+            String profileImageUrl = profileImage != null ? attachmentService.uploadMemberProfileImage(profileImage) : member.getImageUrl();
             member.setImageUrl(profileImageUrl);
         }
         member.updateMemberInfo(request.name(), request.emailNotification(),

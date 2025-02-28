@@ -48,9 +48,7 @@ public class UpdateTaskService implements UpdateTaskStatusUsecase, UpdateTaskPro
             throw new ApplicationException(TaskErrorCode.TASK_STATUS_NOT_ALLOWED);
         }
 
-        if (!task.getTaskStatus().equals(targetTaskStatus)) {
-            // 작업 종료에서의 상태 전환은 count를 업데이트를 하지 않음
-            log.debug("왜안돼", task.getProcessor().getMemberId());
+        if (!(task.getTaskStatus()==targetTaskStatus)) {
             if(task.getProcessor()!=null) {
                 updateProcessorTaskCountService.handleTaskStatusChange(task.getProcessor(), task.getTaskStatus(), targetTaskStatus);
             }

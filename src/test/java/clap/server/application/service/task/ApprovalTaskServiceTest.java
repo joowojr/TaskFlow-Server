@@ -8,6 +8,7 @@ import clap.server.application.port.inbound.domain.CategoryService;
 import clap.server.application.port.inbound.domain.LabelService;
 import clap.server.application.port.inbound.domain.MemberService;
 import clap.server.application.port.inbound.domain.TaskService;
+import clap.server.application.port.outbound.member.LoadMemberPort;
 import clap.server.application.port.outbound.taskhistory.CommandTaskHistoryPort;
 import clap.server.application.service.webhook.SendNotificationService;
 import clap.server.domain.model.member.Member;
@@ -24,6 +25,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.Optional;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.Mockito.*;
@@ -37,6 +40,9 @@ class ApprovalTaskServiceTest {
 
     @Mock
     private MemberService memberService;
+
+    @Mock
+    private LoadMemberPort loadMemberPort;
 
     @Mock
     private TaskService taskService;
@@ -80,7 +86,7 @@ class ApprovalTaskServiceTest {
         Long taskId = 1L;
         ApprovalTaskRequest approvalTaskRequest = new ApprovalTaskRequest(2L, 3L, null, null);
 
-        when(memberService.findReviewer(reviewerId)).thenReturn(reviewer);
+        when(loadMemberPort.findReviewerById(reviewerId)).thenReturn(Optional.of(reviewer));
         when(taskService.findById(taskId)).thenReturn(task);
         when(memberService.findActiveMemberWithDepartment(approvalTaskRequest.processorId())).thenReturn(processor);
         when(categoryService.findById(approvalTaskRequest.categoryId())).thenReturn(category);
@@ -104,7 +110,7 @@ class ApprovalTaskServiceTest {
         Long taskId = 1L;
         ApprovalTaskRequest approvalTaskRequest = new ApprovalTaskRequest(2L, 3L, null, null);
 
-        when(memberService.findReviewer(reviewerId)).thenReturn(reviewer);
+        when(loadMemberPort.findReviewerById(reviewerId)).thenReturn(Optional.of(reviewer));
         when(taskService.findById(taskId)).thenReturn(task);
         when(memberService.findActiveMemberWithDepartment(approvalTaskRequest.processorId())).thenReturn(processor);
         when(categoryService.findById(approvalTaskRequest.categoryId())).thenReturn(category);

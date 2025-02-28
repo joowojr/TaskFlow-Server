@@ -2,18 +2,16 @@ package clap.server.application.service.task;
 
 import clap.server.adapter.inbound.web.dto.task.request.UpdateTaskLabelRequest;
 import clap.server.adapter.inbound.web.dto.task.request.UpdateTaskRequest;
-import clap.server.application.mapper.AttachmentMapper;
 import clap.server.application.port.inbound.domain.CategoryService;
 import clap.server.application.port.inbound.domain.LabelService;
 import clap.server.application.port.inbound.domain.MemberService;
 import clap.server.application.port.inbound.domain.TaskService;
 import clap.server.application.port.inbound.task.UpdateTaskLabelUsecase;
 import clap.server.application.port.inbound.task.UpdateTaskUsecase;
-import clap.server.application.port.outbound.s3.S3UploadPort;
 import clap.server.application.port.outbound.task.CommandAttachmentPort;
 import clap.server.application.port.outbound.task.LoadAttachmentPort;
+import clap.server.application.service.attachment.AttachmentService;
 import clap.server.common.annotation.architecture.ApplicationService;
-import clap.server.common.constants.FilePathConstants;
 import clap.server.domain.model.task.Attachment;
 import clap.server.domain.model.task.Category;
 import clap.server.domain.model.task.Label;
@@ -40,7 +38,7 @@ public class UpdateTaskContentService implements UpdateTaskLabelUsecase, UpdateT
 
     private final LoadAttachmentPort loadAttachmentPort;
     private final CommandAttachmentPort commandAttachmentPort;
-    private final S3UploadPort s3UploadPort;
+    private final AttachmentService attachmentService;
 
     @Override
     @Transactional
@@ -54,7 +52,7 @@ public class UpdateTaskContentService implements UpdateTaskLabelUsecase, UpdateT
             deleteAttachments(request, task);
         }
         if (files != null) {
-            updateAttachments(files, task);
+            attachmentService.saveTaskAttachments(task, files);
         }
         task.updateTask(requesterId, category, request.title(), request.description(), attachmentCount);
         taskService.upsert(task);
@@ -65,12 +63,6 @@ public class UpdateTaskContentService implements UpdateTaskLabelUsecase, UpdateT
         attachmentsToDelete.stream()
                 .peek(Attachment::softDelete)
                 .forEach(commandAttachmentPort::save);
-    }
-
-    private void updateAttachments(List<MultipartFile> files, Task task) {
-        List<String> fileUrls = s3UploadPort.uploadFiles(FilePathConstants.TASK_FILE, files);
-        List<Attachment> attachments = AttachmentMapper.toTaskAttachments(task, files, fileUrls);
-        commandAttachmentPort.saveAll(attachments);
     }
 
     private static int getAttachmentCount(UpdateTaskRequest request, List<MultipartFile> files, Task task) {

@@ -1,7 +1,8 @@
 package clap.server.application.statistics;
 
 import clap.server.adapter.inbound.web.dto.statistics.StatisticsResponse;
-import clap.server.application.port.outbound.task.TaskDocumentPort;
+import clap.server.application.port.outbound.task.CommandTaskDocumentPort;
+import clap.server.application.port.outbound.task.LoadTaskDocumentPort;
 import clap.server.application.service.statistics.FindTaskProcessService;
 import clap.server.domain.policy.task.TaskStatisticsPolicy;
 import org.junit.jupiter.api.DisplayName;
@@ -22,7 +23,7 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 class FindTaskProcessServiceTest {
     @Mock
-    private TaskDocumentPort taskDocumentPort;
+    private LoadTaskDocumentPort loadTaskDocumentPort;
     @Mock
     private TaskStatisticsPolicy taskStatisticsPolicy;
     @InjectMocks
@@ -37,7 +38,7 @@ class FindTaskProcessServiceTest {
         statistics.put("2025-02-04", 7L);
         statistics.put("2025-02-05", 6L);
 
-        when(taskDocumentPort.findPeriodTaskRequestByPeriod(eq("week"))).thenReturn(statistics);
+        when(loadTaskDocumentPort.findPeriodTaskRequestByPeriod(eq("week"))).thenReturn(statistics);
 
         Map<String, Long> formattedStatistics = new TreeMap<>();
         formattedStatistics.put("2월 3일", 8L);
@@ -66,7 +67,7 @@ class FindTaskProcessServiceTest {
         statistics.put("2025-02-04", 7L);
         statistics.put("2025-02-05", 6L);
 
-        when(taskDocumentPort.findPeriodTaskProcessByPeriod(eq("week"))).thenReturn(statistics);
+        when(loadTaskDocumentPort.findPeriodTaskProcessByPeriod(eq("week"))).thenReturn(statistics);
 
         Map<String, Long> formattedStatistics = new TreeMap<>();
         formattedStatistics.put("2월 3일", 8L);
@@ -95,7 +96,7 @@ class FindTaskProcessServiceTest {
         statistics.put("KS", 7L);
         statistics.put("DN", 8L);
 
-        when(taskDocumentPort.findCategoryTaskRequestByPeriod(eq("week"))).thenReturn(statistics);
+        when(loadTaskDocumentPort.findCategoryTaskRequestByPeriod(eq("week"))).thenReturn(statistics);
 
         //when
         List<StatisticsResponse> week = findTaskProcessService.aggregateCategoryTaskRequest("week");
@@ -118,7 +119,7 @@ class FindTaskProcessServiceTest {
         statistics.put("tony.tsx", 7L);
         statistics.put("moya.moya", 8L);
 
-        when(taskDocumentPort.findManagerTaskProcessByPeriod(eq("week"))).thenReturn(statistics);
+        when(loadTaskDocumentPort.findManagerTaskProcessByPeriod(eq("week"))).thenReturn(statistics);
 
         //when
         List<StatisticsResponse> week = findTaskProcessService.aggregateManagerTaskProcess("week");

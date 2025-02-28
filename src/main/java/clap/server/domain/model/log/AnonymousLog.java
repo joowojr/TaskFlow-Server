@@ -3,7 +3,6 @@ package clap.server.domain.model.log;
 import clap.server.adapter.outbound.persistense.entity.log.constant.LogStatus;
 import clap.server.common.utils.ClientIpParseUtil;
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
@@ -16,11 +15,11 @@ import java.time.LocalDateTime;
 public class AnonymousLog extends ApiLog {
     private String loginNickname;
 
-    public static AnonymousLog createAnonymousLog(HttpServletRequest request, int statusCode, String customCode, LogStatus logStatus, Object responseBody, String requestBody, String nickName) {
+    public static AnonymousLog createAnonymousLog(String clientIp, String requestUrl, String requestMethod, int statusCode, String customCode, LogStatus logStatus, Object responseBody, String requestBody, String nickName) {
         return AnonymousLog.builder()
-                .clientIp(ClientIpParseUtil.getClientIp(request))
-                .requestUrl(request.getRequestURI())
-                .requestMethod(request.getMethod())
+                .clientIp(clientIp)
+                .requestUrl(requestUrl)
+                .requestMethod(requestMethod)
                 .statusCode(statusCode)
                 .customStatusCode(customCode != null ? customCode : "")
                 .requestBody(requestBody)
